@@ -1,0 +1,86 @@
+# Logical Arguments for Analysis
+
+Analyze each argument below. For each one:
+1. Classify as VALID or INVALID
+2. Identify any logical fallacies present
+3. Explain your reasoning step-by-step
+
+---
+
+## Argument 1
+
+All mammals have hearts.
+All dogs have hearts.
+Therefore, all dogs are mammals.
+
+---
+
+## Argument 2
+
+If it rains, the ground will be wet.
+The ground is wet.
+Therefore, it rained.
+
+---
+
+## Argument 3
+
+All birds can fly.
+Penguins are birds.
+Therefore, penguins can fly.
+
+---
+
+## Argument 4
+
+Some philosophers are wealthy.
+Some wealthy people are politicians.
+Therefore, some philosophers are politicians.
+
+---
+
+## Argument 5
+
+If a number is even, then it is divisible by 2.
+The number 6 is divisible by 2.
+Therefore, 6 is even.
+
+---
+
+## Argument 6
+
+All squares are rectangles.
+All rectangles have four sides.
+Therefore, all squares have four sides.
+
+---
+
+## Argument 7
+
+The more you study, the better you do on exams.
+John studies more than anyone else.
+Therefore, John will do the best on the exam.
+
+---
+
+## Argument 8
+
+All cats are mammals.
+No reptiles are mammals.
+Therefore, no cats are reptiles.
+
+---
+
+## Argument 9
+
+If you work hard, you will succeed.
+Alice succeeded.
+Therefore, Alice worked hard.
+
+---
+
+## Argument 10
+
+All politicians are liars.
+My brother is a politician.
+Therefore, my brother is a liar.
