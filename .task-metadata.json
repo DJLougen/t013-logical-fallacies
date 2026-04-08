@@ -1,0 +1,57 @@
+{
+  "id": "T013",
+  "name": "Reasoning Depth Assessment - Logical Fallacies",
+  "domain": "Multi-step Reasoning",
+  "difficulty": "Medium",
+  "description": "Analyze 10 logical arguments and identify fallacies, validity, and reasoning quality. Each argument requires parsing structure, applying logical rules, detecting fallacies, and explaining reasoning. This is a psychometric benchmark using IRT principles - each reasoning step is individually scored for depth, self-correction, and verification behaviors.",
+  "tools_available": [
+    "terminal",
+    "read_file"
+  ],
+  "environment": {
+    "files": [
+      {
+        "path": "/problems/logical_arguments.txt",
+        "description": "10 logical arguments with varying complexity"
+      },
+      {
+        "path": "/problems/scoring_rubric.md",
+        "description": "7-dimensional scoring rubric (Caduceus framework)"
+      },
+      {
+        "path": "/problems/expected_analysis.md",
+        "description": "Reference analysis for validation"
+      }
+    ],
+    "services": [],
+    "preconditions": [
+      "Each argument has 3-5 distinct reasoning steps",
+      "Arguments vary in difficulty (b-values from -1.5 to +1.5)",
+      "Scoring requires both final answer AND reasoning process quality"
+    ]
+  },
+  "success_criteria": [
+    "All 10 arguments correctly classified as valid/invalid",
+    "Fallacies correctly identified (undistributed middle, affirming consequent, etc.)",
+    "Reasoning depth score >= 2.0 on 0-3 scale (shows thorough analysis)",
+    "Self-correction score >= 1.5 (detects and corrects initial errors)",
+    "Verification score >= 1.5 (uses multiple approaches to verify conclusions)",
+    "Complete reasoning chains provided for each argument",
+    "IRT ability estimate (θ) can be calculated from step-level performance"
+  ],
+  "par_steps": 15,
+  "benchmark_type": "psychometric",
+  "scoring_dimensions": [
+    "thinking-depth",
+    "self-correction",
+    "verification"
+  ],
+  "irt_parameters": {
+    "difficulty_b": 0.0,
+    "discrimination_a": 1.2,
+    "target_ability_range": [
+      -1.0,
+      1.0
+    ]
+  }
+}

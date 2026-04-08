@@ -1,78 +1,52 @@
-# T013: Reasoning Depth Assessment - Logical Fallacies
-
-A psychometric benchmark for evaluating AI agent reasoning quality using Item Response Theory (IRT) principles.
+# Logical Reasoning Practice Exercises
 
 ## Overview
 
-This benchmark tests whether an AI can think logically like a trained reasoner — not just get the right answer, but demonstrate the right reasoning process, catch its own errors, and verify conclusions.
+This repository contains 10 logical arguments for analysis and practice. Work through each argument carefully, applying principles of formal logic and fallacy detection.
 
-## Task Definition
+## How to Use
 
-Analyze **10 logical arguments** and:
-1. Classify each as valid or invalid
-2. Identify specific fallacies (undistributed middle, affirming consequent, etc.)
-3. Explain reasoning for each classification
-4. Show step-by-step analysis for each argument
+1. Read through `problems/logical_arguments.txt`
+2. Analyze each argument systematically
+3. Classify each as valid or invalid
+4. Identify any logical fallacies present
+5. Provide detailed reasoning for your classifications
 
-## Psychometric Properties
+## Analysis Guidelines
 
-| Parameter | Value | Meaning |
-|-----------|-------|---------|
-| **Difficulty (b)** | 0.0 | Baseline difficulty — targets average ability level |
-| **Discrimination (a)** | 1.2 | Good at separating different ability levels |
-| **Target θ Range** | [-1.0, +1.0] | Average to above-average reasoners |
-| **Par Steps** | 15 | Expected efficient completion steps |
+For each argument, consider:
+- What is the logical form? (categorical syllogism, conditional, etc.)
+- Are the premises true?
+- Does the conclusion follow from the premises?
+- What fallacies might be present?
 
-## Scoring Dimensions
+## Common Fallacies to Look For
 
-This task focuses on **3 of the 7 Caduceus dimensions:**
+- **Affirming the Consequent**: If P then Q; Q; therefore P (INVALID)
+- **Undistributed Middle**: Some A are B; Some B are C; therefore Some A are C (INVALID)
+- **False Premise**: Argument is formally valid but has false premises
+- **Hasty Generalization**: Drawing universal conclusions from limited examples
 
-| Dimension | Weight | Target Score |
-|-----------|--------|--------------|
-| **Thinking Depth** | 17% | ≥ 2.0 (thorough analysis) |
-| **Self-Correction** | 17% | ≥ 1.5 (catches own errors) |
-| **Verification** | 14% | ≥ 1.5 (multiple verification approaches) |
+## Output Format
 
-## Directory Structure
-
+For each argument:
 ```
-├── README.md                 # This file
-├── task.json                 # Task definition (Caduceus format)
-├── problems/
-│   ├── logical_arguments.txt   # 10 arguments to analyze
-│   ├── scoring_rubric.md       # 7-dimensional rubric
-│   └── expected_analysis.md    # Reference solutions
-└── scoring/
-    └── evaluate.py             # Automated scoring script
+Argument N: [VALID/INVALID]
+Fallacy: [name of fallacy or "None"]
+Analysis: [your step-by-step reasoning]
+Verification: [how you verified your answer]
 ```
 
-## Running the Benchmark
+## Files
 
-```bash
-# Download problems
-git clone https://github.com/DJLougen/t013-logical-fallacies
-cd t013-logical-fallacies
+- `problems/logical_arguments.txt` - The 10 arguments to analyze
+- `problems/expected_analysis.md` - Reference solutions (for self-check after completion)
 
-# Run with your agent
-python3 scoring/evaluate.py --agent <your-agent> --problems problems/
-```
+## Tips for Success
 
-## Success Criteria
+- Take time to parse the logical structure before jumping to conclusions
+- Consider counter-examples to test your analysis
+- Double-check by examining the argument form abstractly
+- Use multiple verification approaches when possible
 
-To pass, an agent must:
-- ✓ Correctly classify all 10 arguments
-- ✓ Identify fallacies accurately
-- ✓ Show thinking depth ≥ 2.0
-- ✓ Demonstrate self-correction ≥ 1.5
-- ✓ Use verification ≥ 1.5
-- ✓ Enable IRT ability estimate (θ) calculation
-
-## License
-
-MIT License — See LICENSE file.
-
-## References
-
-- [Caduceus Benchmark Framework](https://djlougen.github.io/caduceus/)
-- [Item Response Theory](https://en.wikipedia.org/wiki/Item_response_theory)
-- [Logical Fallacies](https://en.wikipedia.org/wiki/Fallacy)
+Good luck!
