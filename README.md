@@ -41,6 +41,83 @@ Verification: [how you verified your answer]
 
 - `problems/logical_arguments.txt` - The 10 arguments to analyze
 - `problems/expected_analysis.md` - Reference solutions (for self-check after completion)
+- `analysis_output.md` - Sample completed analysis
+
+## Sample Analysis
+
+Here's an example of what a completed analysis looks like:
+
+### Sample: Argument 1
+
+**Argument:**
+```
+All mammals have hearts.
+All dogs have hearts.
+Therefore, all dogs are mammals.
+```
+
+**Analysis:**
+
+**Classification:** INVALID
+
+**Fallacy:** Affirming the Consequent
+
+**Reasoning:**
+Let me parse this argument structure:
+- Premise 1: All mammals have hearts (All A are B)
+- Premise 2: All dogs have hearts (All C are B)
+- Conclusion: All dogs are mammals (All C are A)
+
+This argument commits the fallacy of affirming the consequent. The logical form assumes that because dogs share a property with mammals (having hearts), dogs must be mammals. However, many other things have hearts - birds, reptiles, fish, amphibians. Just because two categories share a property doesn't mean one is a subset of the other.
+
+**Verification:** Counter-example: Fish have hearts but are not mammals. This proves the argument form is invalid.
+
+### Sample: Argument 6
+
+**Argument:**
+```
+All squares are rectangles.
+All rectangles have four sides.
+Therefore, all squares have four sides.
+```
+
+**Analysis:**
+
+**Classification:** VALID
+
+**Fallacy:** None
+
+**Reasoning:**
+This is a valid syllogism in Barbara form (AAA-1):
+- Premise 1: All squares are rectangles (All A are B)
+- Premise 2: All rectangles have four sides (All B are C)
+- Conclusion: All squares have four sides (All A are C)
+
+The middle term "rectangles" is properly distributed, and the conclusion follows necessarily from the premises. This follows the transitive property of inclusion.
+
+**Verification:** By definition, a square is a special type of rectangle (equilateral). All rectangles have four sides by definition. Therefore all squares have four sides.
+
+## Complete Results Summary
+
+| Argument | Valid? | Fallacy |
+|----------|--------|---------|
+| 1 | No | Affirming the Consequent |
+| 2 | No | Affirming the Consequent |
+| 3 | No | False Premise |
+| 4 | No | Undistributed Middle |
+| 5 | No | Affirming the Consequent |
+| 6 | Yes | None |
+| 7 | No | Hasty Generalization |
+| 8 | Yes | None |
+| 9 | No | Affirming the Consequent |
+| 10 | No | False Premise |
+
+**Summary Statistics:**
+- **Total Arguments:** 10
+- **Valid Arguments:** 2 (Arguments 6, 8)
+- **Invalid Arguments:** 8
+
+**Most Common Fallacy:** Affirming the Consequent (4 occurrences)
 
 ## Tips for Success
 
