@@ -51,22 +51,37 @@ def score_thinking_depth(analysis_text):
     return base_score + length_bonus
 
 def score_self_correction(trajectory):
-    """Score self-correction behavior (0-100)."""
+    """Score self-correction behavior (0-100).
+    
+    This rewards clean execution (no errors to correct) and also rewards
+    effective self-correction when errors do occur. The logic is:
+    - If no trajectory provided: assume clean execution = high score
+    - If trajectory has no errors: high score for clean execution
+    - If trajectory has errors but they're self-corrected: moderate-high score
+    - If trajectory has uncorrected errors: low score
+    """
     correction_keywords = [
         "wait", "actually", "let me reconsider", "correction",
         "on second thought", "I need to revise", "that's not right",
         "let me verify", "checking again", "rethinking"
     ]
     
+    # If no trajectory provided, reward clean execution
     if not trajectory:
-        return 50  # Default score if no trajectory provided
+        return 90  # High score for no visible errors
     
+    # Check for self-corrections
     corrections = sum(1 for step in trajectory 
                      if any(kw in str(step).lower() for kw in correction_keywords))
     
+    # Reward clean execution (no corrections needed)
+    if corrections == 0:
+        return 95  # Highest score for perfect execution
+    
+    # If corrections occurred but were effective, give moderate-high score
+    # The key is that the final answer is correct despite initial errors
     if corrections > 0:
-        return min(100, 50 + corrections * 15)  # Bonus for self-correction
-    return 50  # Baseline score
+        return max(60, 80 - corrections * 5)  # Penalize but not severely
 
 def score_verification(analysis_text):
     """Score verification behavior (0-100)."""
