@@ -1,0 +1,52 @@
+{
+  "1": {
+    "valid": false,
+    "fallacy": "affirming consequent",
+    "analysis": "This argument commits the fallacy of affirming the consequent. The logical form assumes that because dogs share a property with mammals (having hearts), dogs must be mammals. However, many other things have hearts - birds, reptiles, fish, amphibians. Just because two categories share a property doesn't mean one is a subset of the other."
+  },
+  "2": {
+    "valid": false,
+    "fallacy": "affirming consequent",
+    "analysis": "The conditional 'If P then Q' only tells us what happens when it rains. It doesn't tell us that rain is the only way the ground can become wet. The ground could be wet from sprinklers, a burst pipe, flooding, melting snow, or someone dumping water."
+  },
+  "3": {
+    "valid": false,
+    "fallacy": "false premise",
+    "analysis": "The logical form here is actually valid (universal instantiation: All A are B; C is A; therefore C is B). However, the first premise is factually false. Not all birds can fly - penguins, ostriches, emus, kiwis, and cassowaries are all flightless birds."
+  },
+  "4": {
+    "valid": false,
+    "fallacy": "undistributed middle",
+    "analysis": "The middle term 'wealthy people' is not distributed in either premise. We're only talking about 'some' wealthy people in each case. The wealthy philosophers and wealthy politicians might be completely different groups."
+  },
+  "5": {
+    "valid": false,
+    "fallacy": "affirming consequent",
+    "analysis": "This affirms the consequent. While it happens to be true that 6 is even, the reasoning is invalid. The conditional only tells us that even numbers are divisible by 2, not that numbers divisible by 2 are necessarily even."
+  },
+  "6": {
+    "valid": true,
+    "fallacy": null,
+    "analysis": "This is a valid syllogism in Barbara form (AAA-1). The middle term 'rectangles' is properly distributed, and the conclusion follows necessarily from the premises. This follows the transitive property of inclusion."
+  },
+  "7": {
+    "valid": false,
+    "fallacy": "hasty generalization",
+    "analysis": "The first premise states a general trend, not a universal rule. The argument assumes a perfect correlation and ignores other factors that affect exam performance: natural ability, test anxiety, sleep quality, health, prior knowledge, understanding of the material, test-taking skills."
+  },
+  "8": {
+    "valid": true,
+    "fallacy": null,
+    "analysis": "If all cats are mammals, and no reptiles are mammals, then cats and reptiles are disjoint sets. No cat can be a reptile."
+  },
+  "9": {
+    "valid": false,
+    "fallacy": "affirming consequent",
+    "analysis": "The conditional tells us that hard work leads to success, but doesn't tell us that success implies hard work. Alice could have succeeded through luck, connections, inherited wealth, natural talent, or other means."
+  },
+  "10": {
+    "valid": false,
+    "fallacy": "false premise",
+    "analysis": "The logical form is valid (universal instantiation), but the first premise is both factually false (not all politicians are liars) and a hasty generalization (overgeneralizing from some politicians to all)."
+  }
+}

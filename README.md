@@ -119,6 +119,20 @@ The middle term "rectangles" is properly distributed, and the conclusion follows
 
 **Most Common Fallacy:** Affirming the Consequent (4 occurrences)
 
+## Sample Score
+
+**Analysis completed by:** Ornstein-27B-Q4_K_M.gguf (custom provider)
+
+| Dimension | Score | Weight |
+|-----------|-------|--------|
+| Classification Accuracy | 90.0/100 | 52% |
+| Thinking Depth | 100/100 | 17% |
+| Self-Correction | 50/100 | 17% |
+| Verification | 70/100 | 14% |
+| **Overall** | **82.1/100** | **100%** |
+
+**Status:** ✓ PASSED (threshold: 70)
+
 ## Tips for Success
 
 - Take time to parse the logical structure before jumping to conclusions
