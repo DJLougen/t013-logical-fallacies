@@ -53,14 +53,14 @@ def score_thinking_depth(analysis_text):
 def score_self_correction(trajectory):
     """Score self-correction behavior (0-100).
     
-    This dimension measures: Can the model recognize and correct its own errors?
+    This dimension measures error recovery capability.
     
-    Scoring logic:
-    - If no errors were made: Perfect score (100) - competence shown
-    - If errors were made but self-corrected: Moderate-high score (60-80)
-    - If errors were made and NOT corrected: Low score (0-40)
+    Scoring logic (inverse - only penalizes errors):
+    - No errors made = 100/100 (perfect execution)
+    - Errors made but self-corrected = 85/100 (minor penalty for inefficiency)
+    - Errors made and NOT corrected = 0-40/100 (major penalty for failure)
     
-    Note: This dimension is only meaningful if errors are introduced to test
+    This dimension is only meaningful if errors are introduced to test
     the model's ability to recover from mistakes.
     """
     correction_keywords = [
@@ -69,9 +69,9 @@ def score_self_correction(trajectory):
         "let me verify", "checking again", "rethinking"
     ]
     
-    # If no trajectory provided and final answer is correct: perfect execution
+    # If no trajectory provided: perfect execution
     if not trajectory:
-        return 100  # Perfect score for clean execution
+        return 100  # No errors = perfect score
     
     # Check for self-corrections in trajectory
     corrections = sum(1 for step in trajectory 
@@ -79,7 +79,13 @@ def score_self_correction(trajectory):
     
     # Perfect execution (no corrections needed) = perfect score
     if corrections == 0:
-        return 100  # Perfect score for flawless reasoning
+        return 100  # No errors = perfect score
+    
+    # Errors were made but self-corrected = minor penalty for inefficiency
+    # The key is that the model recovered - that's the important part
+    # The penalty is small because making errors is inefficient, not wrong
+    if corrections > 0:
+        return 85  # Small penalty for inefficiency, but recovery is good
 
 def score_verification(analysis_text):
     """Score verification behavior (0-100)."""

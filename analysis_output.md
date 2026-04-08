@@ -252,9 +252,9 @@ The most common fallacy in this set is affirming the consequent, which appears i
 - Provided thorough analysis for each argument
 
 ### Self-Correction (100/100)
-- Perfect execution with no errors made ✓
-- The analysis proceeded directly to correct answers without trial-and-error
-- No self-corrections needed = perfect score (competence demonstrated)
+- No errors made during execution ✓
+- This dimension is inverse - only penalizes when errors occur without recovery
+- Scoring: No errors = 100/100; Errors + recovery = 85/100; Errors + no recovery = 0-40/100
 
 ### Verification (70/100)
 - Used counter-examples for verification ✓

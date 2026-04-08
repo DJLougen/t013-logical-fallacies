@@ -134,7 +134,7 @@ The middle term "rectangles" is properly distributed, and the conclusion follows
 **Status:** ✓ PASSED (threshold: 70)
 
 **Scoring Notes:**
-- **Self-Correction (100/100):** Perfect score for flawless execution. No errors were made, so no corrections were needed. This dimension rewards competence - getting it right the first time. Note: This dimension is only meaningful if errors are introduced to test the model's ability to recover from mistakes.
+- **Self-Correction (100/100):** This dimension is inverse - it only loses points for errors without recovery. Scoring: No errors = 100/100; Errors + recovery = 85/100; Errors + no recovery = 0-40/100. This dimension is only meaningful if errors are introduced to test the model's ability to recover from mistakes.
 
 ## Tips for Success
 
