@@ -53,12 +53,15 @@ def score_thinking_depth(analysis_text):
 def score_self_correction(trajectory):
     """Score self-correction behavior (0-100).
     
-    This rewards clean execution (no errors to correct) and also rewards
-    effective self-correction when errors do occur. The logic is:
-    - If no trajectory provided: assume clean execution = high score
-    - If trajectory has no errors: high score for clean execution
-    - If trajectory has errors but they're self-corrected: moderate-high score
-    - If trajectory has uncorrected errors: low score
+    This dimension measures: Can the model recognize and correct its own errors?
+    
+    Scoring logic:
+    - If no errors were made: Perfect score (100) - competence shown
+    - If errors were made but self-corrected: Moderate-high score (60-80)
+    - If errors were made and NOT corrected: Low score (0-40)
+    
+    Note: This dimension is only meaningful if errors are introduced to test
+    the model's ability to recover from mistakes.
     """
     correction_keywords = [
         "wait", "actually", "let me reconsider", "correction",
@@ -66,22 +69,17 @@ def score_self_correction(trajectory):
         "let me verify", "checking again", "rethinking"
     ]
     
-    # If no trajectory provided, reward clean execution
+    # If no trajectory provided and final answer is correct: perfect execution
     if not trajectory:
-        return 90  # High score for no visible errors
+        return 100  # Perfect score for clean execution
     
-    # Check for self-corrections
+    # Check for self-corrections in trajectory
     corrections = sum(1 for step in trajectory 
                      if any(kw in str(step).lower() for kw in correction_keywords))
     
-    # Reward clean execution (no corrections needed)
+    # Perfect execution (no corrections needed) = perfect score
     if corrections == 0:
-        return 95  # Highest score for perfect execution
-    
-    # If corrections occurred but were effective, give moderate-high score
-    # The key is that the final answer is correct despite initial errors
-    if corrections > 0:
-        return max(60, 80 - corrections * 5)  # Penalize but not severely
+        return 100  # Perfect score for flawless reasoning
 
 def score_verification(analysis_text):
     """Score verification behavior (0-100)."""

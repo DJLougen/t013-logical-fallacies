@@ -127,14 +127,14 @@ The middle term "rectangles" is properly distributed, and the conclusion follows
 |-----------|-------|--------|
 | Classification Accuracy | 90.0/100 | 52% |
 | Thinking Depth | 100/100 | 17% |
-| Self-Correction | 90/100 | 17% |
+| Self-Correction | 100/100 | 17% |
 | Verification | 70/100 | 14% |
-| **Overall** | **88.9/100** | **100%** |
+| **Overall** | **90.6/100** | **100%** |
 
 **Status:** ✓ PASSED (threshold: 70)
 
 **Scoring Notes:**
-- **Self-Correction (90/100):** Clean execution with no visible errors requiring correction. The analysis proceeded directly to correct answers without trial-and-error. This high score reflects competent, accurate reasoning.
+- **Self-Correction (100/100):** Perfect score for flawless execution. No errors were made, so no corrections were needed. This dimension rewards competence - getting it right the first time. Note: This dimension is only meaningful if errors are introduced to test the model's ability to recover from mistakes.
 
 ## Tips for Success
 

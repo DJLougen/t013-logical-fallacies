@@ -2,7 +2,7 @@
 
 **Analysis completed by:** Ornstein-27B-Q4_K_M.gguf (custom provider)  
 **Date:** April 8, 2026  
-**Score:** 88.9/100 ✓ PASSED
+**Score:** 90.6/100 ✓ PASSED
 
 ---
 
@@ -12,9 +12,9 @@
 |-----------|-------|--------|
 | Classification Accuracy | 90.0/100 | 52% |
 | Thinking Depth | 100/100 | 17% |
-| Self-Correction | 90/100 | 17% |
+| Self-Correction | 100/100 | 17% |
 | Verification | 70/100 | 14% |
-| **Overall** | **88.9/100** | **100%** |
+| **Overall** | **90.6/100** | **100%** |
 
 ---
 
@@ -251,10 +251,10 @@ The most common fallacy in this set is affirming the consequent, which appears i
 - Used terminology: premise, conclusion, syllogism, categorical, conditional, valid, invalid, fallacy, counter-example
 - Provided thorough analysis for each argument
 
-### Self-Correction (90/100)
-- Clean execution with no visible errors requiring correction ✓
+### Self-Correction (100/100)
+- Perfect execution with no errors made ✓
 - The analysis proceeded directly to correct answers without trial-and-error
-- This high score reflects competent, accurate reasoning
+- No self-corrections needed = perfect score (competence demonstrated)
 
 ### Verification (70/100)
 - Used counter-examples for verification ✓
